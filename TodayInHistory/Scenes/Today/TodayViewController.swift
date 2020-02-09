@@ -69,7 +69,8 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+//    doSomething()
+    fetchWeather()
   }
   
   // MARK: Do something
@@ -82,8 +83,15 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     interactor?.doSomething(request: request)
   }
   
+  func fetchWeather()
+  {
+    let request = Today.Something.Request()
+    interactor?.fetchTodayInHistory(request: request)
+  }
+  
   func displaySomething(viewModel: Today.Something.ViewModel)
   {
+    
     //nameTextField.text = viewModel.name
   }
 }
