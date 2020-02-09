@@ -21,6 +21,10 @@
 		08EDE54A23F0656E003B0837 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54423F0656E003B0837 /* TodayViewController.swift */; };
 		08EDE54B23F0656E003B0837 /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54523F0656E003B0837 /* TodayInteractor.swift */; };
 		08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54E23F0683F003B0837 /* URLConstants.swift */; };
+		08EDE55223F082F2003B0837 /* MySessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55123F082F2003B0837 /* MySessionManager.swift */; };
+		08EDE55723F08314003B0837 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55423F08314003B0837 /* Reachability.swift */; };
+		08EDE55823F08314003B0837 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55523F08314003B0837 /* Session.swift */; };
+		08EDE55923F08314003B0837 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55623F08314003B0837 /* Utilities.swift */; };
 		7DDEA3734E801BDB2842E5EB /* Pods_TodayInHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60F6EA9F8C3A89AF2025AFC /* Pods_TodayInHistory.framework */; };
 		B69848F7C04E6E43282411BB /* Pods_TodayInHistoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431588CCF9E8914D3CB88AAA /* Pods_TodayInHistoryTests.framework */; };
 		D278249C06AB94D7D3C3D5A6 /* Pods_TodayInHistoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB3BBAA551C359C35A5E109 /* Pods_TodayInHistoryUITests.framework */; };
@@ -64,6 +68,10 @@
 		08EDE54423F0656E003B0837 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		08EDE54523F0656E003B0837 /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
 		08EDE54E23F0683F003B0837 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		08EDE55123F082F2003B0837 /* MySessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySessionManager.swift; sourceTree = "<group>"; };
+		08EDE55423F08314003B0837 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		08EDE55523F08314003B0837 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		08EDE55623F08314003B0837 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0FA0006DF721515CFA870156 /* Pods-TodayInHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayInHistory.debug.xcconfig"; path = "Target Support Files/Pods-TodayInHistory/Pods-TodayInHistory.debug.xcconfig"; sourceTree = "<group>"; };
 		431588CCF9E8914D3CB88AAA /* Pods_TodayInHistoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayInHistoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB3BBAA551C359C35A5E109 /* Pods_TodayInHistoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayInHistoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +136,9 @@
 		08EA7B4323F035B1005D7DA0 /* TodayInHistory */ = {
 			isa = PBXGroup;
 			children = (
+				08EDE55A23F0841A003B0837 /* Extensions */,
+				08EDE55323F082FC003B0837 /* Helpers */,
+				08EDE55023F0829A003B0837 /* NetworkAPI */,
 				08EDE54D23F06815003B0837 /* Constants */,
 				08EDE53F23F06443003B0837 /* Scenes */,
 				08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */,
@@ -185,6 +196,31 @@
 				08EDE54E23F0683F003B0837 /* URLConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		08EDE55023F0829A003B0837 /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				08EDE55123F082F2003B0837 /* MySessionManager.swift */,
+			);
+			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
+		08EDE55323F082FC003B0837 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				08EDE55423F08314003B0837 /* Reachability.swift */,
+				08EDE55523F08314003B0837 /* Session.swift */,
+				08EDE55623F08314003B0837 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		08EDE55A23F0841A003B0837 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0F235379443704D611627B58 /* Frameworks */ = {
@@ -431,12 +467,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EDE55223F082F2003B0837 /* MySessionManager.swift in Sources */,
 				08EDE54923F0656E003B0837 /* TodayModels.swift in Sources */,
 				08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */,
 				08EDE54823F0656E003B0837 /* TodayRouter.swift in Sources */,
+				08EDE55923F08314003B0837 /* Utilities.swift in Sources */,
 				08EDE54623F0656E003B0837 /* TodayPresenter.swift in Sources */,
 				08EDE54B23F0656E003B0837 /* TodayInteractor.swift in Sources */,
 				08EDE54A23F0656E003B0837 /* TodayViewController.swift in Sources */,
+				08EDE55723F08314003B0837 /* Reachability.swift in Sources */,
+				08EDE55823F08314003B0837 /* Session.swift in Sources */,
 				08EDE54723F0656E003B0837 /* TodayWorker.swift in Sources */,
 				08EA7B4523F035B1005D7DA0 /* AppDelegate.swift in Sources */,
 				08EA7B4723F035B1005D7DA0 /* SceneDelegate.swift in Sources */,

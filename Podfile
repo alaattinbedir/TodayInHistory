@@ -8,6 +8,7 @@ target 'TodayInHistory' do
   # Pods for TodayInHistory
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'ObjectMapper'
 
   target 'TodayInHistoryTests' do
     inherit! :search_paths
