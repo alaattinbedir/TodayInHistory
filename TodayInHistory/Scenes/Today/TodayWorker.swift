@@ -14,9 +14,9 @@ import UIKit
 
 class TodayWorker
 {
-    func doSomeWork()
-    {
-    }
+  func doSomeWork()
+  {
+  }
     
   func fetchTodayInHistory(completion: @escaping (Today.Something.Response.Today?, Error?) -> ())
     {
@@ -24,7 +24,7 @@ class TodayWorker
         URLSession.shared.dataTask(with: publicUrl) { (data, response, error) in
             guard let data = data else { return }
             do {
-                let decoder = JSONDecoder()
+              let decoder = JSONDecoder()
               let publicData = try decoder.decode(Today.Something.Response.Today.self, from: data)
                 print(publicData)
                 completion(publicData,nil)
