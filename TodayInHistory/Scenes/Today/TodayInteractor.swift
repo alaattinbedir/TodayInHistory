@@ -39,7 +39,7 @@ class TodayInteractor: TodayBusinessLogic, TodayDataStore
       todayWorker?.fetchTodayInHistory(completion: { (today, err) in
         self.today = today
         let response = ListToday.FetchToday.Response(today: today)
-        print(response)
+//        print(response)
         self.presenter?.presentFetchedToday(response: response)
       })
       

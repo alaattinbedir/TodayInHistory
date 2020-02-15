@@ -17,15 +17,41 @@ protocol TodayDisplayLogic: class
   func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
 }
 
+enum Options {
+  case events
+  case births
+  case deaths
+}
+
 class TodayViewController: UIViewController, TodayDisplayLogic
 {
-  @IBOutlet weak var tableView: UITableView!
+  var interactor: TodayBusinessLogic?
+  var router: (NSObjectProtocol & TodayRoutingLogic & TodayDataPassing)?
+  var displayedData: [TodayData] = []
+  var selectedOption: Options = .events
+  
   let todayCellNibName = "TodayTableViewCell"
   let todayCellIdentifier = "TodayCellIdentifier"
   
-  var interactor: TodayBusinessLogic?
-  var router: (NSObjectProtocol & TodayRoutingLogic & TodayDataPassing)?
-
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var optionsSegmentedControl: UISegmentedControl!
+  
+  @IBAction func optionsChanged(_ sender: Any) {
+    switch optionsSegmentedControl.selectedSegmentIndex
+    {
+      case 0:
+        selectedOption = .events
+        case 1:
+        selectedOption = .births
+        case 2:
+        selectedOption = .deaths
+        default:
+          break
+    }
+    
+    fetchTodayInHistory()
+  }
+  
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -78,6 +104,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   }
   
   // MARK: View lifecycle
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -90,9 +117,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     fetchTodayInHistory()
   }
   
-  // MARK: Do something
-  //@IBOutlet weak var nameTextField: UITextField!
-  var displayedData: [TodayData] = []
+  // MARK: Fetch today in the history data
   
   func fetchTodayInHistory()
   {
@@ -102,37 +127,19 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   
   func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
   {
-    displayedData = viewModel.displayedEvents
+    switch selectedOption
+    {
+      case .events:
+        displayedData = viewModel.displayedEvents
+      case .births:
+        displayedData = viewModel.displayedBirths
+      case .deaths:
+        displayedData = viewModel.displayedDeaths
+    }
+    
     DispatchQueue.main.async {
         self.tableView.reloadData()
-    }    
-    //nameTextField.text = viewModel.name
+    }
   }
 }
 
-
-// MARK: - Extensions
-// MARK: - UITableViewDelegate
-extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
-  
-    func updateTableView() {
-      tableView.reloadData()
-    }
-  
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as! TodayTableViewCell
-        cell.delegate = self
-        let data = displayedData[indexPath.row]
-        cell.configureCell(dailyData: data)
-        
-        return cell
-    }
-}

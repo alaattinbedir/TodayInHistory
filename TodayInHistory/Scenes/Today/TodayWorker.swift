@@ -14,10 +14,6 @@ import UIKit
 
 class TodayWorker
 {
-  func doSomeWork()
-  {
-  }
-    
   func fetchTodayInHistory(completion: @escaping (Today, Error?) -> ())
     {
         guard let publicUrl = URL(string: APPURL.BaseURL) else { return }
@@ -26,11 +22,9 @@ class TodayWorker
             do {
               let decoder = JSONDecoder()
               let publicData = try decoder.decode(Today.self, from: data)
-                print(publicData)
                 completion(publicData,nil)
             } catch let err {
                 print("Error", err)
-//                completion(ListToday.FetchToday.Response,err)
             }
             }.resume()
     }
