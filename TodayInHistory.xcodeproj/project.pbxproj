@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		084E7BE723F82A5F008C3E22 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BE623F82A5F008C3E22 /* Today.swift */; };
-		084E7BEB23F83F45008C3E22 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 084E7BE923F83F45008C3E22 /* DailyTableViewCell.xib */; };
-		084E7BEC23F83F45008C3E22 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BEA23F83F45008C3E22 /* DailyTableViewCell.swift */; };
+		084E7BEF23F864F0008C3E22 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BED23F864F0008C3E22 /* TodayTableViewCell.swift */; };
+		084E7BF023F864F0008C3E22 /* TodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 084E7BEE23F864F0008C3E22 /* TodayTableViewCell.xib */; };
+		084E7BF223F86A49008C3E22 /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BF123F86A49008C3E22 /* String+Base.swift */; };
 		08EA7B4523F035B1005D7DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */; };
 		08EA7B4723F035B1005D7DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B4623F035B1005D7DA0 /* SceneDelegate.swift */; };
 		08EA7B4C23F035B1005D7DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EA7B4A23F035B1005D7DA0 /* Main.storyboard */; };
@@ -52,8 +53,9 @@
 
 /* Begin PBXFileReference section */
 		084E7BE623F82A5F008C3E22 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
-		084E7BE923F83F45008C3E22 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
-		084E7BEA23F83F45008C3E22 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		084E7BED23F864F0008C3E22 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
+		084E7BEE23F864F0008C3E22 /* TodayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayTableViewCell.xib; sourceTree = "<group>"; };
+		084E7BF123F86A49008C3E22 /* String+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
 		08EA7B4123F035B1005D7DA0 /* TodayInHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayInHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08EA7B4623F035B1005D7DA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,8 +130,8 @@
 		084E7BE823F83F1B008C3E22 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				084E7BEA23F83F45008C3E22 /* DailyTableViewCell.swift */,
-				084E7BE923F83F45008C3E22 /* DailyTableViewCell.xib */,
+				084E7BED23F864F0008C3E22 /* TodayTableViewCell.swift */,
+				084E7BEE23F864F0008C3E22 /* TodayTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +246,7 @@
 		08EDE55A23F0841A003B0837 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				084E7BF123F86A49008C3E22 /* String+Base.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,7 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08EA7B5123F035B2005D7DA0 /* LaunchScreen.storyboard in Resources */,
-				084E7BEB23F83F45008C3E22 /* DailyTableViewCell.xib in Resources */,
+				084E7BF023F864F0008C3E22 /* TodayTableViewCell.xib in Resources */,
 				08EA7B4E23F035B2005D7DA0 /* Assets.xcassets in Resources */,
 				08EA7B4C23F035B1005D7DA0 /* Main.storyboard in Resources */,
 			);
@@ -494,12 +497,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				08EDE55223F082F2003B0837 /* MySessionManager.swift in Sources */,
+				084E7BF223F86A49008C3E22 /* String+Base.swift in Sources */,
 				08EDE54923F0656E003B0837 /* TodayModels.swift in Sources */,
 				08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */,
 				08EDE54823F0656E003B0837 /* TodayRouter.swift in Sources */,
 				08EDE55923F08314003B0837 /* Utilities.swift in Sources */,
 				084E7BE723F82A5F008C3E22 /* Today.swift in Sources */,
-				084E7BEC23F83F45008C3E22 /* DailyTableViewCell.swift in Sources */,
+				084E7BEF23F864F0008C3E22 /* TodayTableViewCell.swift in Sources */,
 				08EDE54623F0656E003B0837 /* TodayPresenter.swift in Sources */,
 				08EDE54B23F0656E003B0837 /* TodayInteractor.swift in Sources */,
 				08EDE54A23F0656E003B0837 /* TodayViewController.swift in Sources */,

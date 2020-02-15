@@ -29,14 +29,9 @@ enum ListToday
     
     struct ViewModel
     {
-      struct Event
-      {
-        var year: String
-        var text: String
-        var html: String
-        var no_year_html: String
-      }
-      var displayedEvents: [Event]
+      var displayedEvents: [TodayData]
+      var displayedBirths: [TodayData]
+      var displayedDeaths: [TodayData]
     }
         
   }

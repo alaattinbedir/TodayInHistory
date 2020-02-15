@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="KGk-i7-Jjw" customClass="TodayTableViewCell" customModule="TodayInHistory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="74"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khosrau II is crowned king of Persia.[1]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKy-Wo-wto">
+                        <rect key="frame" x="0.0" y="0.0" width="349" height="40"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="4QI-Qf-HSj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3p-ah-35a">
+                        <rect key="frame" x="0.0" y="40" width="349" height="34"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="750" constant="34" id="iX8-d9-TOW"/>
+                        </constraints>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-Uj-L2z">
+                        <rect key="frame" x="164.5" y="47" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="n4T-HJ-2LQ"/>
+                            <constraint firstAttribute="width" constant="20" id="o4K-vs-cxu"/>
+                        </constraints>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="NKy-Wo-wto" secondAttribute="trailing" id="0D7-IK-2jR"/>
+                    <constraint firstItem="NKy-Wo-wto" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0e7-bV-sWu"/>
+                    <constraint firstItem="F3p-ah-35a" firstAttribute="top" secondItem="NKy-Wo-wto" secondAttribute="bottom" id="3EY-dU-Cwa"/>
+                    <constraint firstItem="fcH-Uj-L2z" firstAttribute="top" secondItem="NKy-Wo-wto" secondAttribute="bottom" constant="7" id="9eU-Tg-Uhu"/>
+                    <constraint firstAttribute="trailing" secondItem="F3p-ah-35a" secondAttribute="trailing" id="Fj6-we-VOl"/>
+                    <constraint firstItem="fcH-Uj-L2z" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="I8W-jJ-n7N"/>
+                    <constraint firstItem="NKy-Wo-wto" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PKU-YV-v5s"/>
+                    <constraint firstItem="F3p-ah-35a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Sjt-WC-eRE"/>
+                    <constraint firstAttribute="bottom" secondItem="F3p-ah-35a" secondAttribute="bottom" id="sls-l4-vqT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dataHtmlWebView" destination="F3p-ah-35a" id="zkx-Z1-fv3"/>
+                <outlet property="dataTextLabel" destination="NKy-Wo-wto" id="ORG-LD-N8p"/>
+                <outlet property="loadingActivityIndicator" destination="fcH-Uj-L2z" id="16W-u4-NKB"/>
+                <outlet property="textLabel" destination="NKy-Wo-wto" id="al0-nq-REL"/>
+                <outlet property="webViewHeightConstraint" destination="iX8-d9-TOW" id="s1u-eF-9st"/>
+            </connections>
+            <point key="canvasLocation" x="-978.98550724637687" y="35.491071428571423"/>
+        </tableViewCell>
+    </objects>
+</document>

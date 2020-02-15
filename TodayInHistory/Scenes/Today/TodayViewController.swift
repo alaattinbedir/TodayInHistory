@@ -14,13 +14,14 @@ import UIKit
 
 protocol TodayDisplayLogic: class
 {
-  func displaySomething(viewModel: ListToday.FetchToday.ViewModel)
+  func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
 }
 
 class TodayViewController: UIViewController, TodayDisplayLogic
 {
-  let dailyCellNibName = "DailyTableViewCell"
-  let dailyCellIdentifier = "DailyTableViewCell"
+  @IBOutlet weak var tableView: UITableView!
+  let todayCellNibName = "TodayTableViewCell"
+  let todayCellIdentifier = "TodayCellIdentifier"
   
   var interactor: TodayBusinessLogic?
   var router: (NSObjectProtocol & TodayRoutingLogic & TodayDataPassing)?
@@ -67,10 +68,20 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     }
   }
   
+  func prepareTableView() {
+      tableView.dataSource = self
+      tableView.delegate = self
+      tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+      tableView.rowHeight = UITableView.automaticDimension
+      tableView.estimatedRowHeight = 44
+      tableView.register(UINib.init(nibName: todayCellNibName, bundle: nil), forCellReuseIdentifier: todayCellIdentifier)
+  }
+  
   // MARK: View lifecycle
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    prepareTableView()
   }
   
   override func viewWillAppear(_ animated: Bool)
@@ -81,13 +92,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   
   // MARK: Do something
   //@IBOutlet weak var nameTextField: UITextField!
-  var displayedEvents: [ListToday.FetchToday.ViewModel.Event] = []
-  
-  func doSomething()
-  {
-    let request = ListToday.FetchToday.Request()
-    interactor?.doSomething(request: request)
-  }
+  var displayedData: [TodayData] = []
   
   func fetchTodayInHistory()
   {
@@ -95,9 +100,12 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     interactor?.fetchTodayInHistory(request: request)
   }
   
-  func displaySomething(viewModel: ListToday.FetchToday.ViewModel)
+  func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
   {
-    
+    displayedData = viewModel.displayedEvents
+    DispatchQueue.main.async {
+        self.tableView.reloadData()
+    }    
     //nameTextField.text = viewModel.name
   }
 }
@@ -105,21 +113,25 @@ class TodayViewController: UIViewController, TodayDisplayLogic
 
 // MARK: - Extensions
 // MARK: - UITableViewDelegate
-extension TodayViewController : UITableViewDelegate, UITableViewDataSource {
+extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
+  
+    func updateTableView() {
+      tableView.reloadData()
+    }
+  
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let forecastDaily = weather?.daily?.data else { return 0 }        
-        return displayedEvents.count
+        return displayedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: dailyCellIdentifier) as! DailyTableViewCell
-        
-//        guard let data = weather?.daily?.data![indexPath.row] else { return cell }
-//        cell.configureCell(dailyData: data)
+        let cell = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as! TodayTableViewCell
+        cell.delegate = self
+        let data = displayedData[indexPath.row]
+        cell.configureCell(dailyData: data)
         
         return cell
     }

@@ -17,7 +17,7 @@ struct Today: Codable {
 
 // MARK: - DataClass
 struct DataClass: Codable {
-    let events, births, deaths: [Birth]
+    let events, births, deaths: [TodayData]
 
     enum CodingKeys: String, CodingKey {
         case events = "Events"
@@ -26,8 +26,8 @@ struct DataClass: Codable {
     }
 }
 
-// MARK: - Birth
-struct Birth: Codable {
+// MARK: - Data
+struct TodayData: Codable {
     let year, text, html, noYearHTML: String
     let links: [Link]
 

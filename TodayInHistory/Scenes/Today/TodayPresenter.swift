@@ -14,7 +14,6 @@ import UIKit
 
 protocol TodayPresentationLogic
 {
-  func presentSomething(response: ListToday.FetchToday.Response)
   func presentFetchedToday(response: ListToday.FetchToday.Response)
 }
 
@@ -26,16 +25,14 @@ class TodayPresenter: TodayPresentationLogic
   
   func presentFetchedToday(response: ListToday.FetchToday.Response)
   {
-    let displayedEvents: [ListToday.FetchToday.ViewModel.Event] = []
-    let viewModel = ListToday.FetchToday.ViewModel(displayedEvents: displayedEvents)
-    viewController?.displaySomething(viewModel: viewModel)
-  }
-    
-  func presentSomething(response: ListToday.FetchToday.Response) {
-      let displayedEvents: [ListToday.FetchToday.ViewModel.Event] = []
-        let viewModel = ListToday.FetchToday.ViewModel(displayedEvents: displayedEvents)
-        viewController?.displaySomething(viewModel: viewModel)
+    if let displayedEvents = response.today?.data.events,
+       let displayedBirth = response.today?.data.births,
+       let displayedDeath = response.today?.data.deaths {
+      
+      let viewModel = ListToday.FetchToday.ViewModel(displayedEvents: displayedEvents, displayedBirths: displayedBirth, displayedDeaths: displayedDeath)
+      viewController?.displayTodayData(viewModel: viewModel)
+    }else{
+      print("error")
     }
-    
-
+  }
 }

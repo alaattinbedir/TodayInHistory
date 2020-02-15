@@ -14,7 +14,6 @@ import UIKit
 
 protocol TodayBusinessLogic
 {
-  func doSomething(request: ListToday.FetchToday.Request)
   func fetchTodayInHistory(request: ListToday.FetchToday.Request)
 }
 
@@ -32,14 +31,7 @@ class TodayInteractor: TodayBusinessLogic, TodayDataStore
   
   // MARK: Do something
   
-  func doSomething(request: ListToday.FetchToday.Request)
-  {
-    todayWorker = TodayWorker()
-    todayWorker?.doSomeWork()
-    
-    let response = ListToday.FetchToday.Response()
-    presenter?.presentSomething(response: response)
-  }
+  
     
     func fetchTodayInHistory(request: ListToday.FetchToday.Request)
     {
