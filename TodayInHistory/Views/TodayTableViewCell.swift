@@ -50,29 +50,17 @@ class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
   }
   
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    
     webView.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
       if complete != nil {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
-            print("Height: \(height ?? 0)")
+//            print("Height: \(height ?? 0)")
             self.loadingActivityIndicator.stopAnimating()
             
             self.delegate?.updateTableView()
         })
     }
-
     })
-    
-    
-//    if webView.isLoading == false {
-//      //document.documentElement.scrollHeight
-//      webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (height, error) in
-//        print("Height: \(height ?? 0)")
-//        self.webViewHeightConstraint?.constant = height as! CGFloat
-//        self.delegate?.updateTableView()
-//      })
-//    }
   }
   
   func configureCell(dailyData: TodayData) {
