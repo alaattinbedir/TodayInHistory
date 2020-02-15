@@ -12,63 +12,32 @@
 
 import UIKit
 
-enum Today
+enum ListToday
 {
   // MARK: Use cases
   
-  enum Something
+  enum FetchToday
   {
     struct Request
     {
     }
-    struct Response: Codable
+    
+    struct Response : Codable
     {
-        // MARK: - Today
-        struct Today: Codable {
-            let date: String
-            let url: String
-            let data: DataClass
-        }
-
-        // MARK: - DataClass
-        struct DataClass: Codable {
-            let events, births, deaths: [Birth]
-
-            enum CodingKeys: String, CodingKey {
-                case events = "Events"
-                case births = "Births"
-                case deaths = "Deaths"
-            }
-        }
-
-        // MARK: - Birth
-        struct Birth: Codable {
-            let year, text, html, noYearHTML: String
-            let links: [Link]
-
-            enum CodingKeys: String, CodingKey {
-                case year, text, html
-                case noYearHTML = "no_year_html"
-                case links
-            }
-        }
-
-        // MARK: - Link
-        struct Link: Codable {
-            let title: String
-            let link: String
-        }
+      var today: Today?      
     }
-    
-    
     
     struct ViewModel
     {
-      var today: Today?
+      struct Event
+      {
+        var year: String
+        var text: String
+        var html: String
+        var no_year_html: String
+      }
+      var displayedEvents: [Event]
     }
-    
-    
-    
-    
+        
   }
 }

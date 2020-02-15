@@ -14,8 +14,8 @@ import UIKit
 
 protocol TodayBusinessLogic
 {
-  func doSomething(request: Today.Something.Request)
-  func fetchTodayInHistory(request: Today.Something.Request)
+  func doSomething(request: ListToday.FetchToday.Request)
+  func fetchTodayInHistory(request: ListToday.FetchToday.Request)
 }
 
 protocol TodayDataStore
@@ -26,35 +26,34 @@ protocol TodayDataStore
 class TodayInteractor: TodayBusinessLogic, TodayDataStore
 {
   var presenter: TodayPresentationLogic?
-  var worker: TodayWorker?
+  var todayWorker: TodayWorker?
+  var today: Today?
   //var name: String = ""
   
   // MARK: Do something
   
-  func doSomething(request: Today.Something.Request)
+  func doSomething(request: ListToday.FetchToday.Request)
   {
-    worker = TodayWorker()
-    worker?.doSomeWork()
+    todayWorker = TodayWorker()
+    todayWorker?.doSomeWork()
     
-    let response = Today.Something.Response()
+    let response = ListToday.FetchToday.Response()
     presenter?.presentSomething(response: response)
   }
     
-    func fetchTodayInHistory(request: Today.Something.Request)
+    func fetchTodayInHistory(request: ListToday.FetchToday.Request)
     {
-      worker = TodayWorker()
-      worker?.fetchTodayInHistory(completion: { (response, err) in
-          if let responseData = response{
-              print(responseData)
-              self.presenter?.presentSomething2(response: responseData)
-          }else{
-              print("error")
-          }
+      todayWorker = TodayWorker()
+      todayWorker?.fetchTodayInHistory(completion: { (today, err) in
+        self.today = today
+        let response = ListToday.FetchToday.Response(today: today)
+        print(response)
+        self.presenter?.presentFetchedToday(response: response)
       })
       
       //let response = Today.Something.Response()
       //presenter?.presentSomething(response: response)
     }
-    
+
 }
 

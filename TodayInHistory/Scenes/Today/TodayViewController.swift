@@ -14,11 +14,14 @@ import UIKit
 
 protocol TodayDisplayLogic: class
 {
-  func displaySomething(viewModel: Today.Something.ViewModel)
+  func displaySomething(viewModel: ListToday.FetchToday.ViewModel)
 }
 
 class TodayViewController: UIViewController, TodayDisplayLogic
 {
+  let dailyCellNibName = "DailyTableViewCell"
+  let dailyCellIdentifier = "DailyTableViewCell"
+  
   var interactor: TodayBusinessLogic?
   var router: (NSObjectProtocol & TodayRoutingLogic & TodayDataPassing)?
 
@@ -65,33 +68,59 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   }
   
   // MARK: View lifecycle
-  
   override func viewDidLoad()
   {
     super.viewDidLoad()
-//    doSomething()
-    fetchWeather()
+  }
+  
+  override func viewWillAppear(_ animated: Bool)
+  {
+    super.viewWillAppear(animated)
+    fetchTodayInHistory()
   }
   
   // MARK: Do something
-  
   //@IBOutlet weak var nameTextField: UITextField!
+  var displayedEvents: [ListToday.FetchToday.ViewModel.Event] = []
   
   func doSomething()
   {
-    let request = Today.Something.Request()
+    let request = ListToday.FetchToday.Request()
     interactor?.doSomething(request: request)
   }
   
-  func fetchWeather()
+  func fetchTodayInHistory()
   {
-    let request = Today.Something.Request()
+    let request = ListToday.FetchToday.Request()
     interactor?.fetchTodayInHistory(request: request)
   }
   
-  func displaySomething(viewModel: Today.Something.ViewModel)
+  func displaySomething(viewModel: ListToday.FetchToday.ViewModel)
   {
     
     //nameTextField.text = viewModel.name
   }
+}
+
+
+// MARK: - Extensions
+// MARK: - UITableViewDelegate
+extension TodayViewController : UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        guard let forecastDaily = weather?.daily?.data else { return 0 }        
+        return displayedEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: dailyCellIdentifier) as! DailyTableViewCell
+        
+//        guard let data = weather?.daily?.data![indexPath.row] else { return cell }
+//        cell.configureCell(dailyData: data)
+        
+        return cell
+    }
 }

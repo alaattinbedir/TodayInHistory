@@ -18,19 +18,19 @@ class TodayWorker
   {
   }
     
-  func fetchTodayInHistory(completion: @escaping (Today.Something.Response.Today?, Error?) -> ())
+  func fetchTodayInHistory(completion: @escaping (Today, Error?) -> ())
     {
         guard let publicUrl = URL(string: APPURL.BaseURL) else { return }
         URLSession.shared.dataTask(with: publicUrl) { (data, response, error) in
             guard let data = data else { return }
             do {
               let decoder = JSONDecoder()
-              let publicData = try decoder.decode(Today.Something.Response.Today.self, from: data)
+              let publicData = try decoder.decode(Today.self, from: data)
                 print(publicData)
                 completion(publicData,nil)
             } catch let err {
                 print("Error", err)
-                completion(nil,err)
+//                completion(ListToday.FetchToday.Response,err)
             }
             }.resume()
     }
