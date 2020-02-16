@@ -76,7 +76,6 @@
                 <outlet property="dataTextLabel" destination="NKy-Wo-wto" id="ORG-LD-N8p"/>
                 <outlet property="dataYearLabel" destination="5p5-WR-aJ7" id="sSW-iV-oFf"/>
                 <outlet property="loadingActivityIndicator" destination="fcH-Uj-L2z" id="16W-u4-NKB"/>
-                <outlet property="textLabel" destination="NKy-Wo-wto" id="al0-nq-REL"/>
                 <outlet property="webViewHeightConstraint" destination="iX8-d9-TOW" id="s1u-eF-9st"/>
             </connections>
             <point key="canvasLocation" x="-971.73913043478274" y="39.508928571428569"/>
