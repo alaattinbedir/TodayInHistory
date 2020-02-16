@@ -45,7 +45,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   @IBAction func optionsChanged(_ sender: Any) {
     switch optionsSegmentedControl.selectedSegmentIndex
     {
-      case 0:
+        case 0:
         selectedOption = .events
         case 1:
         selectedOption = .births
