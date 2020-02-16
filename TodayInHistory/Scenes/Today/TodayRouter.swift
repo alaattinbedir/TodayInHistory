@@ -14,7 +14,6 @@ import UIKit
 
 @objc protocol TodayRoutingLogic
 {
-  
 }
 
 protocol TodayDataPassing

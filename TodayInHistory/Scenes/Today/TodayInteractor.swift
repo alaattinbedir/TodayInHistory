@@ -19,7 +19,6 @@ protocol TodayBusinessLogic
 
 protocol TodayDataStore
 {
-  
 }
 
 class TodayInteractor: TodayBusinessLogic, TodayDataStore
