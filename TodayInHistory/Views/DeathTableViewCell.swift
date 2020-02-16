@@ -32,7 +32,8 @@ class DeathTableViewCell: BaseTableViewCell {
         
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.hidesWhenStopped = true
-        loadingActivityIndicator.startAnimating()    
+        loadingActivityIndicator.startAnimating()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,8 +56,9 @@ class DeathTableViewCell: BaseTableViewCell {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
 //            print("Height: \(height ?? 0)")
-            self.loadingActivityIndicator.stopAnimating()
-            
+              DispatchQueue.main.async {
+                  self.loadingActivityIndicator.stopAnimating()
+              }
             super.updateTableView()
         })
     }

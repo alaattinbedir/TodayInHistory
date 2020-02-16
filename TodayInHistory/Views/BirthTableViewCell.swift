@@ -30,7 +30,7 @@ class BirthTableViewCell: BaseTableViewCell {
         dataHtmlWebView.scrollView.bounces = false
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.hidesWhenStopped = true
-        loadingActivityIndicator.startAnimating()    
+        loadingActivityIndicator.startAnimating()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,7 +52,9 @@ class BirthTableViewCell: BaseTableViewCell {
       if complete != nil {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
-            self.loadingActivityIndicator.stopAnimating()
+            DispatchQueue.main.async {
+                self.loadingActivityIndicator.stopAnimating()
+            }
             
             super.updateTableView()
         })
