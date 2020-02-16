@@ -18,14 +18,13 @@
 		08E6955323F95E4300943BFC /* BirthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E6954F23F9579900943BFC /* BirthTableViewCell.xib */; };
 		08E6955623F9608000943BFC /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6955423F9608000943BFC /* BaseTableViewCell.swift */; };
 		08E6955723F9608000943BFC /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E6955523F9608000943BFC /* BaseTableViewCell.xib */; };
-		08E6955D23F99D6F00943BFC /* TodayViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6955C23F99D6F00943BFC /* TodayViewControllerTests.swift */; };
+		08E6955F23F9A89A00943BFC /* TodayViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6955E23F9A89A00943BFC /* TodayViewControllerUITests.swift */; };
+		08E6956223F9A95A00943BFC /* TodayControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6956123F9A95A00943BFC /* TodayControllerTests.swift */; };
 		08EA7B4523F035B1005D7DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */; };
 		08EA7B4723F035B1005D7DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B4623F035B1005D7DA0 /* SceneDelegate.swift */; };
 		08EA7B4C23F035B1005D7DA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EA7B4A23F035B1005D7DA0 /* Main.storyboard */; };
 		08EA7B4E23F035B2005D7DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EA7B4D23F035B2005D7DA0 /* Assets.xcassets */; };
 		08EA7B5123F035B2005D7DA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EA7B4F23F035B2005D7DA0 /* LaunchScreen.storyboard */; };
-		08EA7B5C23F035B2005D7DA0 /* TodayInHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B5B23F035B2005D7DA0 /* TodayInHistoryTests.swift */; };
-		08EA7B6723F035B2005D7DA0 /* TodayInHistoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EA7B6623F035B2005D7DA0 /* TodayInHistoryUITests.swift */; };
 		08EDE54623F0656E003B0837 /* TodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54023F0656E003B0837 /* TodayPresenter.swift */; };
 		08EDE54723F0656E003B0837 /* TodayWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54123F0656E003B0837 /* TodayWorker.swift */; };
 		08EDE54823F0656E003B0837 /* TodayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54223F0656E003B0837 /* TodayRouter.swift */; };
@@ -70,7 +69,9 @@
 		08E6955023F9579A00943BFC /* BirthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthTableViewCell.swift; sourceTree = "<group>"; };
 		08E6955423F9608000943BFC /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		08E6955523F9608000943BFC /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
-		08E6955C23F99D6F00943BFC /* TodayViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewControllerTests.swift; sourceTree = "<group>"; };
+		08E6955E23F9A89A00943BFC /* TodayViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewControllerUITests.swift; sourceTree = "<group>"; };
+		08E6956023F9A95900943BFC /* TodayInHistoryTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodayInHistoryTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		08E6956123F9A95A00943BFC /* TodayControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayControllerTests.swift; sourceTree = "<group>"; };
 		08EA7B4123F035B1005D7DA0 /* TodayInHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayInHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08EA7B4623F035B1005D7DA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,10 +80,8 @@
 		08EA7B5023F035B2005D7DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08EA7B5223F035B2005D7DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08EA7B5723F035B2005D7DA0 /* TodayInHistoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayInHistoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		08EA7B5B23F035B2005D7DA0 /* TodayInHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInHistoryTests.swift; sourceTree = "<group>"; };
 		08EA7B5D23F035B2005D7DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08EA7B6223F035B2005D7DA0 /* TodayInHistoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayInHistoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		08EA7B6623F035B2005D7DA0 /* TodayInHistoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInHistoryUITests.swift; sourceTree = "<group>"; };
 		08EA7B6823F035B2005D7DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08EDE54023F0656E003B0837 /* TodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPresenter.swift; sourceTree = "<group>"; };
 		08EDE54123F0656E003B0837 /* TodayWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorker.swift; sourceTree = "<group>"; };
@@ -167,7 +166,8 @@
 		08E6955923F99CE500943BFC /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				08E6955C23F99D6F00943BFC /* TodayViewControllerTests.swift */,
+				08E6956123F9A95A00943BFC /* TodayControllerTests.swift */,
+				08E6956023F9A95900943BFC /* TodayInHistoryTests-Bridging-Header.h */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 		08EA7B5A23F035B2005D7DA0 /* TodayInHistoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				08EA7B5B23F035B2005D7DA0 /* TodayInHistoryTests.swift */,
+				08E6955823F99CD300943BFC /* Scenes */,
 				08EA7B5D23F035B2005D7DA0 /* Info.plist */,
 			);
 			path = TodayInHistoryTests;
@@ -225,9 +225,8 @@
 		08EA7B6523F035B2005D7DA0 /* TodayInHistoryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				08E6955823F99CD300943BFC /* Scenes */,
-				08EA7B6623F035B2005D7DA0 /* TodayInHistoryUITests.swift */,
 				08EA7B6823F035B2005D7DA0 /* Info.plist */,
+				08E6955E23F9A89A00943BFC /* TodayViewControllerUITests.swift */,
 			);
 			path = TodayInHistoryUITests;
 			sourceTree = "<group>";
@@ -377,6 +376,7 @@
 					};
 					08EA7B5623F035B2005D7DA0 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 08EA7B4023F035B1005D7DA0;
 					};
 					08EA7B6123F035B2005D7DA0 = {
@@ -536,7 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08EA7B5C23F035B2005D7DA0 /* TodayInHistoryTests.swift in Sources */,
+				08E6956223F9A95A00943BFC /* TodayControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,8 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08E6955D23F99D6F00943BFC /* TodayViewControllerTests.swift in Sources */,
-				08EA7B6723F035B2005D7DA0 /* TodayInHistoryUITests.swift in Sources */,
+				08E6955F23F9A89A00943BFC /* TodayViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +743,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = TodayInHistoryTests/Info.plist;
@@ -755,6 +755,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaattinbedir.TodayInHistoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodayInHistoryTests/Scenes/Today/TodayInHistoryTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodayInHistory.app/TodayInHistory";
@@ -767,6 +769,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = TodayInHistoryTests/Info.plist;
@@ -778,6 +781,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaattinbedir.TodayInHistoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TodayInHistoryTests/Scenes/Today/TodayInHistoryTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodayInHistory.app/TodayInHistory";

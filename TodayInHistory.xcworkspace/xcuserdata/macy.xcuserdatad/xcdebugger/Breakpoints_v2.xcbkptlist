@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "98E7DF04-6065-4B6E-B3D2-5276E557001C"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TodayInHistory/Scenes/Today/TodayViewController.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1D03F6AE-4446-439F-9019-0969F44FC149"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TodayInHistory/Scenes/Today/TodayInteractor.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "991AE1EF-C6C0-4925-A843-81B030347A84"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TodayInHistory/Scenes/Today/TodayInteractor.swift"
@@ -81,6 +81,86 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "updateTableView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "35DBFC09-A5F5-4209-AABF-431B13910098 - 2fceab2cb8fe3985"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TodayInHistory.TodayViewController.updateTableView() -&gt; ()"
+                  moduleName = "TodayInHistory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macy/Projects/TodayInHistory/TodayInHistory/Extensions/TodayViewController+TableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  uuid = "35DBFC09-A5F5-4209-AABF-431B13910098 - e603dd5debd10a89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TodayInHistory.TodayViewController.updateTableView() -&gt; ()"
+                  moduleName = "TodayInHistory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macy/Projects/TodayInHistory/TodayInHistory/Extensions/TodayViewController+TableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A548F199-F215-4F95-AFBF-853F7373113D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TodayInHistory/Scenes/Today/TodayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "prepareTableView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B15F3FD-4476-488E-9CC6-C6486A91CDD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TodayInHistory/Scenes/Today/TodayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD144F60-8DC6-472F-975E-40927C2F6522"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TodayInHistoryTests/Scenes/Today/TodayControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setupTodayViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
