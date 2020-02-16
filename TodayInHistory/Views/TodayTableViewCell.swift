@@ -16,6 +16,7 @@ protocol TableViewUpdater: class {
 
 class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
 
+  @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
   @IBOutlet weak var dataHtmlWebView: WKWebView!
   @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
@@ -26,6 +27,10 @@ class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
+        dataTextLabel.adjustsFontSizeToFitWidth = true
+        dataTextLabel.sizeToFit()
+    
         dataHtmlWebView.navigationDelegate = self
         dataHtmlWebView.translatesAutoresizingMaskIntoConstraints = false
         dataHtmlWebView.scrollView.isScrollEnabled = false
@@ -64,6 +69,7 @@ class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
   }
   
   func configureCell(dailyData: TodayData) {
+    dataYearLabel.text = dailyData.year
     dataTextLabel.text = dailyData.text
     loadHTMLContent(dailyData.noYearHTML)
   }
