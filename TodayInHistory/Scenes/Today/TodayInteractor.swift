@@ -19,15 +19,19 @@ protocol TodayBusinessLogic
 
 protocol TodayDataStore
 {
-  //var name: String { get set }
+  
 }
 
 class TodayInteractor: TodayBusinessLogic, TodayDataStore
 {
-  var presenter: TodayPresentationLogic?
-  var todayWorker: TodayWorker?
-  var today: Today?
+    var presenter: TodayPresentationLogic?
+    var todayWorker: TodayWorker?
+    var today: Today?
   
+    // Interactor is moderator between worker and presenter,
+    // In addition it is responsible for business logic
+    // It gets request object from viewcontroller and handle network operation regarding this request
+    // After that send response to presenter
     func fetchTodayInHistory(request: ListToday.FetchToday.Request)
     {
       todayWorker = TodayWorker()

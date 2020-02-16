@@ -31,6 +31,7 @@ class EventTableViewCell: BaseTableViewCell {
         dataHtmlWebView.scrollView.bounces = false
         
         loadingActivityIndicator.hidesWhenStopped = true
+        loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.startAnimating()    
     }
 

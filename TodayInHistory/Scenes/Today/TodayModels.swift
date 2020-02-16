@@ -14,8 +14,7 @@ import UIKit
 
 enum ListToday
 {
-  // MARK: Use cases
-  
+  // MARK: Data structure for Clean Swift design patern
   enum FetchToday
   {
     struct Request

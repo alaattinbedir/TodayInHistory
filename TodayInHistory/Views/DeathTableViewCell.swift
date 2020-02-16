@@ -21,8 +21,7 @@ class DeathTableViewCell: BaseTableViewCell {
   
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    
+        
         dataTextLabel.adjustsFontSizeToFitWidth = true
         dataTextLabel.sizeToFit()
     
@@ -31,6 +30,7 @@ class DeathTableViewCell: BaseTableViewCell {
         dataHtmlWebView.scrollView.isScrollEnabled = false
         dataHtmlWebView.scrollView.bounces = false
         
+        loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.hidesWhenStopped = true
         loadingActivityIndicator.startAnimating()    
     }

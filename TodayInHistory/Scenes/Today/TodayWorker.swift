@@ -14,6 +14,7 @@ import UIKit
 
 class TodayWorker
 {
+  // Worker function to retrive today data from api
   func fetchTodayInHistory(completion: @escaping (Today, Error?) -> ())
     {
         guard let publicUrl = URL(string: APPURL.BaseURL) else { return }

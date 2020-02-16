@@ -59,7 +59,6 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   }
   
   // MARK: Object lifecycle
-  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -73,7 +72,6 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   }
   
   // MARK: Setup
-  
   private func setup()
   {
     let viewController = self
@@ -89,7 +87,6 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   }
   
   // MARK: Routing
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if let scene = segue.identifier {
@@ -113,21 +110,14 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   
   
   // MARK: View lifecycle
-  
   override func viewDidLoad()
   {
     super.viewDidLoad()
     prepareTableView()
-  }
-  
-  override func viewWillAppear(_ animated: Bool)
-  {
-    super.viewWillAppear(animated)
     fetchTodayInHistory()
   }
   
   // MARK: Fetch today in the history data
-  
   func fetchTodayInHistory()
   {
     let request = ListToday.FetchToday.Request()

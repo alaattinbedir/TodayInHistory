@@ -21,8 +21,8 @@ class TodayPresenter: TodayPresentationLogic
 {
   weak var viewController: TodayDisplayLogic?
   
-  // MARK: Do something
-  
+  // Presenter responsible to show wiewmodel data in the view.
+  // Sending response which comes from interactor to view controller to present fetched today data
   func presentFetchedToday(response: ListToday.FetchToday.Response)
   {
     if let displayedEvents = response.today?.data.events,

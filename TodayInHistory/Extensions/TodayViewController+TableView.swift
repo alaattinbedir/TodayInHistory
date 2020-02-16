@@ -13,7 +13,9 @@ import UIKit
 extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
   
     func updateTableView() {
-      tableView.reloadData()      
+       DispatchQueue.main.async {
+          self.tableView.reloadData()
+       }
     }
   
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,21 +34,18 @@ extension TodayViewController : UITableViewDelegate, UITableViewDataSource, Tabl
           case .events:
             let cell = tableView.dequeueReusableCell(withIdentifier: eventCellIdentifier) as! EventTableViewCell
             cell.delegate = self
-            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             let data = displayedData[indexPath.row]
             cell.configureCell(dailyData: data)
             return cell
           case .births:
             let cell = tableView.dequeueReusableCell(withIdentifier: birthCellIdentifier) as! BirthTableViewCell
             cell.delegate = self
-            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             let data = displayedData[indexPath.row]
             cell.configureCell(dailyData: data)
             return cell
           case .deaths:
             let cell = tableView.dequeueReusableCell(withIdentifier: deathCellIdentifier) as! DeathTableViewCell
             cell.delegate = self
-            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             let data = displayedData[indexPath.row]
             cell.configureCell(dailyData: data)
             return cell

@@ -21,8 +21,6 @@ class BirthTableViewCell: BaseTableViewCell {
   
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    
         dataTextLabel.adjustsFontSizeToFitWidth = true
         dataTextLabel.sizeToFit()
     
@@ -30,7 +28,7 @@ class BirthTableViewCell: BaseTableViewCell {
         dataHtmlWebView.translatesAutoresizingMaskIntoConstraints = false
         dataHtmlWebView.scrollView.isScrollEnabled = false
         dataHtmlWebView.scrollView.bounces = false
-        
+        loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.hidesWhenStopped = true
         loadingActivityIndicator.startAnimating()    
     }
