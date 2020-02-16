@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol TodayRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  
 }
 
 protocol TodayDataPassing
@@ -26,35 +26,4 @@ class TodayRouter: NSObject, TodayRoutingLogic, TodayDataPassing
 {
   weak var viewController: TodayViewController?
   var dataStore: TodayDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: TodayViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: TodayDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
 }

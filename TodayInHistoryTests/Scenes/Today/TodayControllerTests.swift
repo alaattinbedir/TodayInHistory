@@ -40,14 +40,12 @@ class TodayControllerTests: XCTestCase {
     }
 
   // MARK: - Test doubles
-  
   class TodayBusinessLogicSpy: TodayBusinessLogic
   {
     var today: [Today]?
     
     // MARK: Method call expectations
     var fetchTodayCalled = false
-    
     
     // MARK: Spied methods
     func fetchTodayInHistory(request: ListToday.FetchToday.Request) {
@@ -58,11 +56,9 @@ class TodayControllerTests: XCTestCase {
   class TableViewSpy: UITableView
   {
     // MARK: Method call expectations
-    
     var reloadDataCalled = false
     
     // MARK: Spied methods
-    
     override func reloadData()
     {
       reloadDataCalled = true
@@ -119,27 +115,4 @@ class TodayControllerTests: XCTestCase {
     XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
   }
   
-  func testNumberOfRowsInAnySectionShouldEqaulNumberOfOrdersToDisplay()
-  {
-    // Given
-    let tableView = sut.tableView
-    
-    let event = TodayData(year: "100", text: "100 yil", html: "test", noYearHTML: "test", links: [])
-    let displayedEvents = [event]
-    
-    let birth = TodayData(year: "200", text: "200 yil", html: "test", noYearHTML: "test", links: [])
-    let displayedBirth = [birth]
-    
-    let death = TodayData(year: "300", text: "300 yil", html: "test", noYearHTML: "test", links: [])
-    let displayedDeath = [death]
-    
-    let testDisplayedData:ListToday.FetchToday.ViewModel = ListToday.FetchToday.ViewModel.init(displayedEvents: displayedEvents, displayedBirths: displayedBirth, displayedDeaths: displayedDeath)
-    sut.displayedData = testDisplayedData.displayedEvents
-    
-    // When
-    let numberOfRows = sut.tableView(tableView!, numberOfRowsInSection: 0)
-    
-    // Then
-    XCTAssertEqual(numberOfRows, testDisplayedData.displayedEvents.count, "The number of table view rows should equal the number of orders to display")
-  }
 }

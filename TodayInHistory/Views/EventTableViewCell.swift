@@ -20,8 +20,7 @@ class EventTableViewCell: BaseTableViewCell {
   
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    
+        
         dataTextLabel.adjustsFontSizeToFitWidth = true
         dataTextLabel.sizeToFit()
     
@@ -34,13 +33,11 @@ class EventTableViewCell: BaseTableViewCell {
         loadingActivityIndicator.isHidden = false
         loadingActivityIndicator.startAnimating()
           
-    }
+  }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  override func setSelected(_ selected: Bool, animated: Bool) {
+      super.setSelected(selected, animated: animated)
+  }
     
   
   override func loadHTMLContent(_ htmlContent: String) {

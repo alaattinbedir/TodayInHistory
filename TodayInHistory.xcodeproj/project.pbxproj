@@ -10,7 +10,6 @@
 		084E7BE723F82A5F008C3E22 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BE623F82A5F008C3E22 /* Today.swift */; };
 		084E7BEF23F864F0008C3E22 /* DeathTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BED23F864F0008C3E22 /* DeathTableViewCell.swift */; };
 		084E7BF023F864F0008C3E22 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 084E7BEE23F864F0008C3E22 /* EventTableViewCell.xib */; };
-		084E7BF223F86A49008C3E22 /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BF123F86A49008C3E22 /* String+Base.swift */; };
 		084E7BF423F88E17008C3E22 /* TodayViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E7BF323F88E17008C3E22 /* TodayViewController+TableView.swift */; };
 		08E6954E23F956B300943BFC /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6954D23F956B300943BFC /* EventTableViewCell.swift */; };
 		08E6955123F9579A00943BFC /* BirthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6955023F9579A00943BFC /* BirthTableViewCell.swift */; };
@@ -61,7 +60,6 @@
 		084E7BE623F82A5F008C3E22 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		084E7BED23F864F0008C3E22 /* DeathTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathTableViewCell.swift; sourceTree = "<group>"; };
 		084E7BEE23F864F0008C3E22 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
-		084E7BF123F86A49008C3E22 /* String+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
 		084E7BF323F88E17008C3E22 /* TodayViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodayViewController+TableView.swift"; sourceTree = "<group>"; };
 		08E6954C23F956B300943BFC /* DeathTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeathTableViewCell.xib; sourceTree = "<group>"; };
 		08E6954D23F956B300943BFC /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 		08EDE55A23F0841A003B0837 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				084E7BF123F86A49008C3E22 /* String+Base.swift */,
 				084E7BF323F88E17008C3E22 /* TodayViewController+TableView.swift */,
 			);
 			path = Extensions;
@@ -511,7 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E6954E23F956B300943BFC /* EventTableViewCell.swift in Sources */,
-				084E7BF223F86A49008C3E22 /* String+Base.swift in Sources */,
 				08EDE54923F0656E003B0837 /* TodayModels.swift in Sources */,
 				08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */,
 				08EDE54823F0656E003B0837 /* TodayRouter.swift in Sources */,
