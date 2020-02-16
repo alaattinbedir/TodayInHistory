@@ -6,10 +6,7 @@ target 'TodayInHistory' do
   use_frameworks!
 
   # Pods for TodayInHistory
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'ObjectMapper'
-
+  
   target 'TodayInHistoryTests' do
     inherit! :search_paths
     # Pods for testing

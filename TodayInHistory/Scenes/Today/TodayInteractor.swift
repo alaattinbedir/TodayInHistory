@@ -27,12 +27,7 @@ class TodayInteractor: TodayBusinessLogic, TodayDataStore
   var presenter: TodayPresentationLogic?
   var todayWorker: TodayWorker?
   var today: Today?
-  //var name: String = ""
   
-  // MARK: Do something
-  
-  
-    
     func fetchTodayInHistory(request: ListToday.FetchToday.Request)
     {
       todayWorker = TodayWorker()
@@ -43,8 +38,6 @@ class TodayInteractor: TodayBusinessLogic, TodayDataStore
         self.presenter?.presentFetchedToday(response: response)
       })
       
-      //let response = Today.Something.Response()
-      //presenter?.presentSomething(response: response)
     }
 
 }

@@ -32,7 +32,6 @@
 		08EDE54A23F0656E003B0837 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54423F0656E003B0837 /* TodayViewController.swift */; };
 		08EDE54B23F0656E003B0837 /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54523F0656E003B0837 /* TodayInteractor.swift */; };
 		08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE54E23F0683F003B0837 /* URLConstants.swift */; };
-		08EDE55223F082F2003B0837 /* MySessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55123F082F2003B0837 /* MySessionManager.swift */; };
 		08EDE55723F08314003B0837 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55423F08314003B0837 /* Reachability.swift */; };
 		08EDE55823F08314003B0837 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55523F08314003B0837 /* Session.swift */; };
 		08EDE55923F08314003B0837 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EDE55623F08314003B0837 /* Utilities.swift */; };
@@ -90,7 +89,6 @@
 		08EDE54423F0656E003B0837 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		08EDE54523F0656E003B0837 /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
 		08EDE54E23F0683F003B0837 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
-		08EDE55123F082F2003B0837 /* MySessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySessionManager.swift; sourceTree = "<group>"; };
 		08EDE55423F08314003B0837 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		08EDE55523F08314003B0837 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		08EDE55623F08314003B0837 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				084E7BE523F829E4008C3E22 /* Models */,
 				08EDE55A23F0841A003B0837 /* Extensions */,
 				08EDE55323F082FC003B0837 /* Helpers */,
-				08EDE55023F0829A003B0837 /* NetworkAPI */,
 				08EDE54D23F06815003B0837 /* Constants */,
 				08EDE53F23F06443003B0837 /* Scenes */,
 				08EA7B4423F035B1005D7DA0 /* AppDelegate.swift */,
@@ -245,14 +242,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		08EDE55023F0829A003B0837 /* NetworkAPI */ = {
-			isa = PBXGroup;
-			children = (
-				08EDE55123F082F2003B0837 /* MySessionManager.swift */,
-			);
-			path = NetworkAPI;
-			sourceTree = "<group>";
-		};
 		08EDE55323F082FC003B0837 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +295,6 @@
 				08EA7B3D23F035B1005D7DA0 /* Sources */,
 				08EA7B3E23F035B1005D7DA0 /* Frameworks */,
 				08EA7B3F23F035B1005D7DA0 /* Resources */,
-				EECE4F256455987372030B7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -496,23 +484,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EECE4F256455987372030B7C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodayInHistory/Pods-TodayInHistory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodayInHistory/Pods-TodayInHistory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodayInHistory/Pods-TodayInHistory-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -521,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E6954E23F956B300943BFC /* EventTableViewCell.swift in Sources */,
-				08EDE55223F082F2003B0837 /* MySessionManager.swift in Sources */,
 				084E7BF223F86A49008C3E22 /* String+Base.swift in Sources */,
 				08EDE54923F0656E003B0837 /* TodayModels.swift in Sources */,
 				08EDE54F23F0683F003B0837 /* URLConstants.swift in Sources */,
@@ -716,6 +686,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = TodayInHistory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHRD8446CX;
 				INFOPLIST_FILE = TodayInHistory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
