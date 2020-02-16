@@ -28,6 +28,9 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   var interactor: TodayBusinessLogic?
   var router: (NSObjectProtocol & TodayRoutingLogic & TodayDataPassing)?
   var displayedData: [TodayData] = []
+  var displayedEventData: [TodayData] = []
+  var displayedBirthData: [TodayData] = []
+  var displayedDeathData: [TodayData] = []
   var selectedOption: Options = .events
   
   let eventCellNibName = "EventTableViewCell"
@@ -55,7 +58,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
           break
     }
     
-    fetchTodayInHistory()    
+    reloadTableView()
   }
   
   // MARK: Object lifecycle
@@ -124,21 +127,29 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     interactor?.fetchTodayInHistory(request: request)
   }
   
-  func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
-  {
+  fileprivate func reloadTableView() {
     switch selectedOption
     {
       case .events:
-        displayedData = viewModel.displayedEvents
+        displayedData = displayedEventData
       case .births:
-        displayedData = viewModel.displayedBirths
+        displayedData = displayedBirthData
       case .deaths:
-        displayedData = viewModel.displayedDeaths
+        displayedData = displayedDeathData
     }
     
     DispatchQueue.main.async {
-        self.tableView.reloadData()
+      self.tableView.reloadData()
     }
+  }
+  
+  func displayTodayData(viewModel: ListToday.FetchToday.ViewModel)
+  {
+    displayedEventData = viewModel.displayedEvents
+    displayedBirthData = viewModel.displayedBirths
+    displayedDeathData = viewModel.displayedDeaths
+    
+    reloadTableView()
   }
 }
 
