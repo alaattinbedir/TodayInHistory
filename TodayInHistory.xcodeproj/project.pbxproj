@@ -195,8 +195,8 @@
 		08EA7B4323F035B1005D7DA0 /* TodayInHistory */ = {
 			isa = PBXGroup;
 			children = (
-				084E7BE823F83F1B008C3E22 /* Views */,
 				084E7BE523F829E4008C3E22 /* Models */,
+				084E7BE823F83F1B008C3E22 /* Views */,
 				08EDE55A23F0841A003B0837 /* Extensions */,
 				08EDE55323F082FC003B0837 /* Helpers */,
 				08EDE54D23F06815003B0837 /* Constants */,
