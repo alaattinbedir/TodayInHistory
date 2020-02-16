@@ -31,9 +31,7 @@ class DeathTableViewCell: BaseTableViewCell {
         dataHtmlWebView.scrollView.bounces = false
         
         loadingActivityIndicator.isHidden = false
-        loadingActivityIndicator.hidesWhenStopped = true
-        loadingActivityIndicator.startAnimating()
-        
+        loadingActivityIndicator.startAnimating()        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,6 +54,7 @@ class DeathTableViewCell: BaseTableViewCell {
 //            print("Height: \(height ?? 0)")
               DispatchQueue.main.async {
                   self.loadingActivityIndicator.stopAnimating()
+                  self.loadingActivityIndicator.isHidden = true
               }
             super.updateTableView()
         })

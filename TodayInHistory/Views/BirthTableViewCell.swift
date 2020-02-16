@@ -29,7 +29,6 @@ class BirthTableViewCell: BaseTableViewCell {
         dataHtmlWebView.scrollView.isScrollEnabled = false
         dataHtmlWebView.scrollView.bounces = false
         loadingActivityIndicator.isHidden = false
-        loadingActivityIndicator.hidesWhenStopped = true
         loadingActivityIndicator.startAnimating()
     }
 
@@ -51,6 +50,7 @@ class BirthTableViewCell: BaseTableViewCell {
             self.webViewHeightConstraint?.constant = height as! CGFloat
             DispatchQueue.main.async {
                 self.loadingActivityIndicator.stopAnimating()
+                self.loadingActivityIndicator.isHidden = true
             }
             
             super.updateTableView()
