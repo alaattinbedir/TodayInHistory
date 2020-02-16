@@ -10,19 +10,13 @@ import UIKit
 import WebKit
 
 
-protocol TableViewUpdater: class {
-    func updateTableView()
-}
-
-class EventTableViewCell: UITableViewCell,WKNavigationDelegate {
+class EventTableViewCell: BaseTableViewCell {
 
   @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
   @IBOutlet weak var dataHtmlWebView: WKWebView!
   @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
-  
-  weak var delegate: TableViewUpdater?
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,27 +41,25 @@ class EventTableViewCell: UITableViewCell,WKNavigationDelegate {
     }
     
   
-  func loadHTMLContent(_ htmlContent: String) {
-      let htmlStart = "<HTML><HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD><BODY>"
-      let htmlEnd = "</BODY></HTML>"
-      let htmlString = "\(htmlStart)\(htmlContent)\(htmlEnd)"
-      dataHtmlWebView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
+  override func loadHTMLContent(_ htmlContent: String) {
+    super.loadHTMLContent(htmlContent)
+    let htmlStart = "<HTML><HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD><BODY>"
+    let htmlEnd = "</BODY></HTML>"
+    let htmlString = "\(htmlStart)\(htmlContent)\(htmlEnd)"
+    dataHtmlWebView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
   }
   
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+  override func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    super.webView(webView, didFinish: navigation)
     webView.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
-      if complete != nil {
-            webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
-            self.webViewHeightConstraint?.constant = height as! CGFloat
-//            print("Height: \(height ?? 0)")
-//            self.setNeedsLayout()
-//            self.layoutIfNeeded()
-            self.loadingActivityIndicator.stopAnimating()
-            
-            self.delegate?.updateTableView()
+          if complete != nil {
+                webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
+                self.webViewHeightConstraint?.constant = height as! CGFloat
+                self.loadingActivityIndicator.stopAnimating()
+                super.updateTableView()
+            })
+        }
         })
-    }
-    })
   }
   
   func configureCell(dailyData: TodayData) {

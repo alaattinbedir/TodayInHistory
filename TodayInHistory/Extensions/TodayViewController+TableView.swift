@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - UITableViewDelegate
-extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater, BirthTableViewUpdater,DeathTableViewUpdater {
+extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
   
     func updateTableView() {
       tableView.reloadData()      

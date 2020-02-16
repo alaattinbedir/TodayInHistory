@@ -10,11 +10,7 @@ import UIKit
 import WebKit
 
 
-protocol BirthTableViewUpdater: class {
-    func updateTableView()
-}
-
-class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
+class BirthTableViewCell: BaseTableViewCell {
 
   @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
@@ -22,7 +18,6 @@ class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
   @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
   
-  weak var delegate: BirthTableViewUpdater?
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,24 +42,21 @@ class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
     }
     
   
-  func loadHTMLContent(_ htmlContent: String) {
+  override func loadHTMLContent(_ htmlContent: String) {
       let htmlStart = "<HTML><HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD><BODY>"
       let htmlEnd = "</BODY></HTML>"
       let htmlString = "\(htmlStart)\(htmlContent)\(htmlEnd)"
       dataHtmlWebView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
   }
   
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+  override func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     webView.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
       if complete != nil {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
-//            print("Height: \(height ?? 0)")
-//            self.setNeedsLayout()
-//            self.layoutIfNeeded()
             self.loadingActivityIndicator.stopAnimating()
             
-            self.delegate?.updateTableView()
+            super.updateTableView()
         })
     }
     })

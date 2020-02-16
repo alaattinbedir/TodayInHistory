@@ -10,11 +10,7 @@ import UIKit
 import WebKit
 
 
-protocol DeathTableViewUpdater: class {
-    func updateTableView()
-}
-
-class DeathTableViewCell: UITableViewCell,WKNavigationDelegate {
+class DeathTableViewCell: BaseTableViewCell {
 
   @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
@@ -22,7 +18,6 @@ class DeathTableViewCell: UITableViewCell,WKNavigationDelegate {
   @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
   
-  weak var delegate: DeathTableViewUpdater?
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,14 +42,14 @@ class DeathTableViewCell: UITableViewCell,WKNavigationDelegate {
     }
     
   
-  func loadHTMLContent(_ htmlContent: String) {
+  override func loadHTMLContent(_ htmlContent: String) {
       let htmlStart = "<HTML><HEAD><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"></HEAD><BODY>"
       let htmlEnd = "</BODY></HTML>"
       let htmlString = "\(htmlStart)\(htmlContent)\(htmlEnd)"
       dataHtmlWebView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
   }
   
-  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+  override func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
     webView.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
       if complete != nil {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
@@ -62,7 +57,7 @@ class DeathTableViewCell: UITableViewCell,WKNavigationDelegate {
 //            print("Height: \(height ?? 0)")
             self.loadingActivityIndicator.stopAnimating()
             
-            self.delegate?.updateTableView()
+            super.updateTableView()
         })
     }
     })
