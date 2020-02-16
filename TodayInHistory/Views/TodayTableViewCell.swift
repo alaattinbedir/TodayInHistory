@@ -60,6 +60,8 @@ class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
 //            print("Height: \(height ?? 0)")
+//            self.setNeedsLayout()
+//            self.layoutIfNeeded()
             self.loadingActivityIndicator.stopAnimating()
             
             self.delegate?.updateTableView()

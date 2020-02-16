@@ -14,8 +14,8 @@
             filePath = "TodayInHistory/Scenes/Today/TodayViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -65,6 +65,22 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "configureCell(dailyData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35DBFC09-A5F5-4209-AABF-431B13910098"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TodayInHistory/Extensions/TodayViewController+TableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "updateTableView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

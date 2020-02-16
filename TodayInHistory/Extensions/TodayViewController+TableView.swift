@@ -13,7 +13,7 @@ import UIKit
 extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
   
     func updateTableView() {
-      tableView.reloadData()
+      tableView.reloadData()      
     }
   
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,8 +25,14 @@ extension TodayViewController : UITableViewDelegate, UITableViewDataSource, Tabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as! TodayTableViewCell
+        var cell:TodayTableViewCell! = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as? TodayTableViewCell
+      
+        if cell == nil {
+          cell = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as? TodayTableViewCell
+        }
+        
         cell.delegate = self
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = displayedData[indexPath.row]
         cell.configureCell(dailyData: data)
         

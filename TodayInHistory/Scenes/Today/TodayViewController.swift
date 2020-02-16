@@ -50,6 +50,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
     }
     
     fetchTodayInHistory()
+    refreshTableView()
   }
   
   // MARK: Object lifecycle
@@ -103,6 +104,11 @@ class TodayViewController: UIViewController, TodayDisplayLogic
       tableView.register(UINib.init(nibName: todayCellNibName, bundle: nil), forCellReuseIdentifier: todayCellIdentifier)
   }
   
+  func refreshTableView() {
+      tableView.beginUpdates()
+      tableView.setNeedsDisplay()
+      tableView.endUpdates()
+  }
   // MARK: View lifecycle
   
   override func viewDidLoad()
