@@ -10,11 +10,11 @@ import UIKit
 import WebKit
 
 
-protocol BirthTableViewUpdater: class {
+protocol DeathTableViewUpdater: class {
     func updateTableView()
 }
 
-class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
+class DeathTableViewCell: UITableViewCell,WKNavigationDelegate {
 
   @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
@@ -22,7 +22,7 @@ class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
   @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
   
-  weak var delegate: BirthTableViewUpdater?
+  weak var delegate: DeathTableViewUpdater?
   
   override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,8 +60,6 @@ class BirthTableViewCell: UITableViewCell,WKNavigationDelegate {
             webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
             self.webViewHeightConstraint?.constant = height as! CGFloat
 //            print("Height: \(height ?? 0)")
-//            self.setNeedsLayout()
-//            self.layoutIfNeeded()
             self.loadingActivityIndicator.stopAnimating()
             
             self.delegate?.updateTableView()

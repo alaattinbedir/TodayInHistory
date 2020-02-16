@@ -30,8 +30,14 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   var displayedData: [TodayData] = []
   var selectedOption: Options = .events
   
-  let todayCellNibName = "TodayTableViewCell"
-  let todayCellIdentifier = "TodayCellIdentifier"
+  let eventCellNibName = "EventTableViewCell"
+  let eventCellIdentifier = "EventCellIdentifier"
+  
+  let deathCellNibName = "DeathTableViewCell"
+  let deathCellIdentifier = "DeathCellIdentifier"
+  
+  let birthCellNibName = "BirthTableViewCell"
+  let birthCellIdentifier = "BirthCellIdentifier"
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var optionsSegmentedControl: UISegmentedControl!
@@ -49,8 +55,7 @@ class TodayViewController: UIViewController, TodayDisplayLogic
           break
     }
     
-    fetchTodayInHistory()
-    refreshTableView()
+    fetchTodayInHistory()    
   }
   
   // MARK: Object lifecycle
@@ -98,17 +103,15 @@ class TodayViewController: UIViewController, TodayDisplayLogic
   func prepareTableView() {
       tableView.dataSource = self
       tableView.delegate = self
-      tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+      tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
       tableView.rowHeight = UITableView.automaticDimension
       tableView.estimatedRowHeight = 44
-      tableView.register(UINib.init(nibName: todayCellNibName, bundle: nil), forCellReuseIdentifier: todayCellIdentifier)
+      tableView.register(UINib.init(nibName: eventCellNibName, bundle: nil), forCellReuseIdentifier: eventCellIdentifier)
+      tableView.register(UINib.init(nibName: deathCellNibName, bundle: nil), forCellReuseIdentifier: deathCellIdentifier)
+      tableView.register(UINib.init(nibName: birthCellNibName, bundle: nil), forCellReuseIdentifier: birthCellIdentifier)
   }
   
-  func refreshTableView() {
-      tableView.beginUpdates()
-      tableView.setNeedsDisplay()
-      tableView.endUpdates()
-  }
+  
   // MARK: View lifecycle
   
   override func viewDidLoad()

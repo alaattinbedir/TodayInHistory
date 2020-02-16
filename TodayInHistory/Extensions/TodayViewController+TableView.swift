@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - UITableViewDelegate
-extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater {
+extension TodayViewController : UITableViewDelegate, UITableViewDataSource, TableViewUpdater, BirthTableViewUpdater,DeathTableViewUpdater {
   
     func updateTableView() {
       tableView.reloadData()      
@@ -24,18 +24,33 @@ extension TodayViewController : UITableViewDelegate, UITableViewDataSource, Tabl
         return displayedData.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:TodayTableViewCell! = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as? TodayTableViewCell
-      
-        if cell == nil {
-          cell = tableView.dequeueReusableCell(withIdentifier: todayCellIdentifier) as? TodayTableViewCell
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch selectedOption
+        {
+          case .events:
+            let cell = tableView.dequeueReusableCell(withIdentifier: eventCellIdentifier) as! EventTableViewCell
+            cell.delegate = self
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            let data = displayedData[indexPath.row]
+            cell.configureCell(dailyData: data)
+            return cell
+          case .births:
+            let cell = tableView.dequeueReusableCell(withIdentifier: birthCellIdentifier) as! BirthTableViewCell
+            cell.delegate = self
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            let data = displayedData[indexPath.row]
+            cell.configureCell(dailyData: data)
+            return cell
+          case .deaths:
+            let cell = tableView.dequeueReusableCell(withIdentifier: deathCellIdentifier) as! DeathTableViewCell
+            cell.delegate = self
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            let data = displayedData[indexPath.row]
+            cell.configureCell(dailyData: data)
+            return cell
         }
         
-        cell.delegate = self
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        let data = displayedData[indexPath.row]
-        cell.configureCell(dailyData: data)
-        
-        return cell
     }
 }

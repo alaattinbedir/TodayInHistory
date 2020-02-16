@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-8X-XIN">
-                                <rect key="frame" x="0.0" y="143" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -44,7 +44,7 @@
                             <constraint firstItem="Kyw-8X-XIN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JeB-pS-9x6"/>
                             <constraint firstItem="MW6-mE-Wqu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Opr-WL-gIB"/>
                             <constraint firstItem="Kyw-8X-XIN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ruz-a1-XLr"/>
-                            <constraint firstItem="Kyw-8X-XIN" firstAttribute="top" secondItem="MW6-mE-Wqu" secondAttribute="bottom" constant="5" id="ZaR-dA-iYJ"/>
+                            <constraint firstItem="Kyw-8X-XIN" firstAttribute="top" secondItem="MW6-mE-Wqu" secondAttribute="bottom" constant="10" id="ZaR-dA-iYJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MW6-mE-Wqu" secondAttribute="trailing" constant="20" id="aiG-ww-6FK"/>
                             <constraint firstItem="Kyw-8X-XIN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ckp-ey-zVM"/>
                             <constraint firstItem="MW6-mE-Wqu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dIw-Dp-GXQ"/>
