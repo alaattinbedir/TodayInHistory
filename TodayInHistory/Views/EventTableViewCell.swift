@@ -14,7 +14,7 @@ protocol TableViewUpdater: class {
     func updateTableView()
 }
 
-class TodayTableViewCell: UITableViewCell,WKNavigationDelegate {
+class EventTableViewCell: UITableViewCell,WKNavigationDelegate {
 
   @IBOutlet weak var dataYearLabel: UILabel!
   @IBOutlet weak var dataTextLabel: UILabel!
